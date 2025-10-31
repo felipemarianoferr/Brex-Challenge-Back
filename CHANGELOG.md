@@ -42,3 +42,23 @@ All notable changes to this project will be documented in this file.
 - Includes pagination support with skip and limit parameters
 - Returns expenses ordered by datetime (most recent first)
 
+### /feat - User authentication and authorization
+- Added User model with email/password authentication
+- Implemented JWT-based authentication system
+- Added login and registration endpoints (/api/auth/login, /api/auth/register)
+- Updated Expense model to relate to User (user_id foreign key)
+- Made transaction_id unique per user (not globally unique)
+- All expense endpoints now require authentication
+- Expenses are automatically filtered by authenticated user
+- Added password hashing using bcrypt directly (bypassed passlib compatibility issues)
+- Added temporary database wipe script (wipe_db.py)
+
+### /fix - Updated tests for authentication and bcrypt compatibility
+- Updated all unit tests to include authentication fixtures and test authenticated endpoints
+- Added comprehensive auth endpoint tests (register, login, duplicate email, wrong password)
+- Added user isolation test to verify expenses are properly filtered by user
+- Fixed bcrypt compatibility issue by using bcrypt library directly instead of passlib wrapper
+- Fixed datetime default values in models to use lambda functions for proper SQLAlchemy compatibility
+- All 20 tests now pass successfully
+- Added email-validator dependency for Pydantic EmailStr validation
+

@@ -1,16 +1,24 @@
-from fastapi import FastAPI, Depends, UploadFile, File, HTTPException, Query
+from fastapi import FastAPI, Depends, UploadFile, File, HTTPException, Query, status
 from fastapi.responses import JSONResponse
+from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from sqlalchemy import and_, or_
 from typing import List, Optional
 import csv
 import io
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 
 from app.database import get_db, init_db
-from app.models import Expense
-from app.schemas import ExpenseResponse, CSVUploadResponse
+from app.models import Expense, User
+from app.schemas import ExpenseResponse, CSVUploadResponse, UserCreate, UserResponse, Token
+from app.auth import (
+    get_password_hash,
+    authenticate_user,
+    create_access_token,
+    get_current_active_user,
+    ACCESS_TOKEN_EXPIRE_MINUTES
+)
 
 app = FastAPI(
     title="Tech Startup Expenses API",
@@ -31,6 +39,8 @@ async def root():
         "message": "Tech Startup Expenses API",
         "version": "1.0.0",
         "endpoints": {
+            "register": "/api/auth/register",
+            "login": "/api/auth/login",
             "upload_csv": "/api/expenses/upload-csv",
             "read_default_csv": "/api/expenses/read-default-csv",
             "list_expenses": "/api/expenses",
@@ -46,14 +56,73 @@ async def hello_world():
     return {"message": "Hello, World!"}
 
 
+# Authentication endpoints
+@app.post("/api/auth/register", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
+async def register(
+    user_data: UserCreate,
+    db: Session = Depends(get_db)
+):
+    """
+    Register a new user.
+    """
+    # Check if user already exists
+    existing_user = db.query(User).filter(User.email == user_data.email).first()
+    if existing_user:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Email already registered"
+        )
+    
+    # Create new user
+    hashed_password = get_password_hash(user_data.password)
+    new_user = User(
+        email=user_data.email,
+        hashed_password=hashed_password,
+        full_name=user_data.full_name,
+        is_active=True
+    )
+    
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    
+    return new_user
+
+
+@app.post("/api/auth/login", response_model=Token)
+async def login(
+    form_data: OAuth2PasswordRequestForm = Depends(),
+    db: Session = Depends(get_db)
+):
+    """
+    Login and get access token.
+    """
+    user = authenticate_user(db, form_data.username, form_data.password)
+    if not user:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+    
+    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+    access_token = create_access_token(
+        data={"sub": user.email},
+        expires_delta=access_token_expires
+    )
+    
+    return {"access_token": access_token, "token_type": "bearer"}
+
+
 @app.post("/api/expenses/upload-csv", response_model=CSVUploadResponse)
 async def upload_csv(
     file: UploadFile = File(...),
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
     """
     Upload and process a CSV file containing expenses.
-    The CSV will be parsed and stored in the PostgreSQL database.
+    The CSV will be parsed and stored in the PostgreSQL database for the authenticated user.
     """
     if not file.filename.endswith('.csv'):
         raise HTTPException(status_code=400, detail="File must be a CSV file")
@@ -94,13 +163,15 @@ async def upload_csv(
             except (ValueError, AttributeError):
                 amount = Decimal('0')
 
-            # Check if expense already exists
+            # Check if expense already exists for this user
             existing_expense = db.query(Expense).filter(
-                Expense.transaction_id == row['transaction_id'].strip()
+                Expense.transaction_id == row['transaction_id'].strip(),
+                Expense.user_id == current_user.id
             ).first()
 
             # Prepare expense data
             expense_data = {
+                'user_id': current_user.id,
                 'transaction_id': row['transaction_id'].strip(),
                 'amount': amount,
                 'currency': row.get('currency', 'USD').strip(),
@@ -120,7 +191,8 @@ async def upload_csv(
             if existing_expense:
                 # Update existing expense
                 for key, value in expense_data.items():
-                    setattr(existing_expense, key, value)
+                    if key != 'user_id':  # Don't update user_id
+                        setattr(existing_expense, key, value)
                 records_updated += 1
             else:
                 # Create new expense
@@ -150,25 +222,30 @@ async def upload_csv(
 async def list_expenses(
     skip: int = 0,
     limit: int = 100,
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
     """
-    List all expenses with pagination.
+    List all expenses for the authenticated user with pagination.
     """
-    expenses = db.query(Expense).offset(skip).limit(limit).all()
+    expenses = db.query(Expense).filter(
+        Expense.user_id == current_user.id
+    ).offset(skip).limit(limit).all()
     return expenses
 
 
 @app.get("/api/expenses/{transaction_id}", response_model=ExpenseResponse)
 async def get_expense(
     transaction_id: str,
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
     """
-    Get a specific expense by transaction_id.
+    Get a specific expense by transaction_id for the authenticated user.
     """
     expense = db.query(Expense).filter(
-        Expense.transaction_id == transaction_id
+        Expense.transaction_id == transaction_id,
+        Expense.user_id == current_user.id
     ).first()
 
     if not expense:
@@ -192,10 +269,11 @@ async def query_database(
     max_amount: Optional[float] = Query(None, ge=0, description="Maximum amount"),
     start_date: Optional[str] = Query(None, description="Filter expenses from this date (YYYY-MM-DD)"),
     end_date: Optional[str] = Query(None, description="Filter expenses until this date (YYYY-MM-DD)"),
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_db)
 ):
     """
-    Query and read expenses from the database with various filters.
+    Query and read expenses from the database with various filters for the authenticated user.
     
     Supports filtering by:
     - department
@@ -205,7 +283,7 @@ async def query_database(
     - amount range (min_amount, max_amount)
     - date range (start_date, end_date)
     """
-    db_query = db.query(Expense)
+    db_query = db.query(Expense).filter(Expense.user_id == current_user.id)
     
     # Apply filters
     if department:
@@ -255,9 +333,12 @@ async def query_database(
 
 
 @app.post("/api/expenses/read-default-csv", response_model=CSVUploadResponse)
-async def read_default_csv(db: Session = Depends(get_db)):
+async def read_default_csv(
+    current_user: User = Depends(get_current_active_user),
+    db: Session = Depends(get_db)
+):
     """
-    Read the default mock.csv file and store data in the database.
+    Read the default mock.csv file and store data in the database for the authenticated user.
     """
     import os
     
@@ -303,13 +384,15 @@ async def read_default_csv(db: Session = Depends(get_db)):
                 except (ValueError, AttributeError):
                     amount = Decimal('0')
 
-                # Check if expense already exists
+                # Check if expense already exists for this user
                 existing_expense = db.query(Expense).filter(
-                    Expense.transaction_id == row['transaction_id'].strip()
+                    Expense.transaction_id == row['transaction_id'].strip(),
+                    Expense.user_id == current_user.id
                 ).first()
 
                 # Prepare expense data
                 expense_data = {
+                    'user_id': current_user.id,
                     'transaction_id': row['transaction_id'].strip(),
                     'amount': amount,
                     'currency': row.get('currency', 'USD').strip(),
@@ -329,7 +412,8 @@ async def read_default_csv(db: Session = Depends(get_db)):
                 if existing_expense:
                     # Update existing expense
                     for key, value in expense_data.items():
-                        setattr(existing_expense, key, value)
+                        if key != 'user_id':  # Don't update user_id
+                            setattr(existing_expense, key, value)
                     records_updated += 1
                 else:
                     # Create new expense
