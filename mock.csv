@@ -1,0 +1,76 @@
+transaction_id,amount,currency,datetime,payment_method,src_account,dst_account,vendor_name,start_date,end_date,recurrency,department,expense_type,expense_name
+T0001,1200.00,USD,2025-01-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-01-01,2025-01-31,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0002,8000.00,USD,2025-01-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-01-01,2025-01-31,Monthly,Operations,rent,Office Lease Downtown
+T0003,3200.00,USD,2025-01-03 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-01-01,2025-01-31,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0004,2000.00,USD,2025-01-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-01-01,2025-01-31,Monthly,HR,salaries,January Salaries
+T0005,400.00,USD,2025-01-08 14:15:00,PIX,Marketing Account,Google Ads,Google LLC,2025-01-01,2025-01-31,Monthly,Marketing,ads,Digital Campaigns
+
+T0006,4500.00,USD,2025-02-03 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-02-01,2025-02-28,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0007,8000.00,USD,2025-02-03 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-02-01,2025-02-28,Monthly,Operations,rent,Office Lease Downtown
+T0008,3500.00,USD,2025-02-03 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-02-01,2025-02-28,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0009,2000.00,USD,2025-02-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-02-01,2025-02-28,Monthly,HR,salaries,February Salaries
+T0010,400.00,USD,2025-02-07 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-02-01,2025-02-28,Monthly,Marketing,ads,Digital Campaigns
+T0011,9200.00,USD,2025-02-12 09:00:00,TED,Main Checking,HR Onboarding,PeopleFirst Ltd,2025-02-12,2025-02-12,Bimonthly,HR,onboarding,New Employee Setup (3 hires)
+
+T0012,1200.00,USD,2025-03-03 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-03-01,2025-03-31,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0013,8000.00,USD,2025-03-03 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-03-01,2025-03-31,Monthly,Operations,rent,Office Lease Downtown
+T0014,3800.00,USD,2025-03-03 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-03-01,2025-03-31,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0015,2000.00,USD,2025-03-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-03-01,2025-03-31,Monthly,HR,salaries,March Salaries
+T0016,350.00,USD,2025-03-07 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-03-01,2025-03-31,Monthly,Marketing,ads,Digital Campaigns
+T0017,4800.00,USD,2025-03-10 09:00:00,WIRE,Main Checking,Amazon,Amazon Marketplace,2025-03-10,2025-03-10,Quarterly,Engineering,equipment,2x Developer Laptops (Q1)
+
+T0018,1200.00,USD,2025-04-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-04-01,2025-04-30,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0019,8000.00,USD,2025-04-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-04-01,2025-04-30,Monthly,Operations,rent,Office Lease Downtown
+T0020,4000.00,USD,2025-04-02 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-04-01,2025-04-30,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0021,2000.00,USD,2025-04-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-04-01,2025-04-30,Monthly,HR,salaries,April Salaries
+T0022,420.00,USD,2025-04-06 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-04-01,2025-04-30,Monthly,Marketing,ads,Digital Campaigns
+
+T0023,1200.00,USD,2025-05-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-05-01,2025-05-31,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0024,8000.00,USD,2025-05-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-05-01,2025-05-31,Monthly,Operations,rent,Office Lease Downtown
+T0025,4500.00,USD,2025-05-02 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-05-01,2025-05-31,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0026,2000.00,USD,2025-05-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-05-01,2025-05-31,Monthly,HR,salaries,May Salaries
+T0027,380.00,USD,2025-05-06 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-05-01,2025-05-31,Monthly,Marketing,ads,Digital Campaigns
+T0028,9800.00,USD,2025-05-12 09:00:00,TED,Main Checking,HR Onboarding,PeopleFirst Ltd,2025-05-12,2025-05-12,Bimonthly,HR,onboarding,New Employee Setup (4 hires)
+
+T0029,1200.00,USD,2025-06-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-06-01,2025-06-30,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0030,8000.00,USD,2025-06-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-06-01,2025-06-30,Monthly,Operations,rent,Office Lease Downtown
+T0031,5000.00,USD,2025-06-02 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-06-01,2025-06-30,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0032,2000.00,USD,2025-06-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-06-01,2025-06-30,Monthly,HR,salaries,June Salaries
+T0033,370.00,USD,2025-06-07 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-06-01,2025-06-30,Monthly,Marketing,ads,Digital Campaigns
+T0034,4800.00,USD,2025-06-10 09:00:00,WIRE,Main Checking,Amazon,Amazon Marketplace,2025-06-10,2025-06-10,Quarterly,Engineering,equipment,2x Developer Laptops (Q2)
+
+T0035,1200.00,USD,2025-07-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-07-01,2025-07-31,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0036,8000.00,USD,2025-07-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-07-01,2025-07-31,Monthly,Operations,rent,Office Lease Downtown
+T0037,5500.00,USD,2025-07-02 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-07-01,2025-07-31,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0038,2000.00,USD,2025-07-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-07-01,2025-07-31,Monthly,HR,salaries,July Salaries
+T0039,350.00,USD,2025-07-07 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-07-01,2025-07-31,Monthly,Marketing,ads,Digital Campaigns
+T0040,9500.00,USD,2025-07-10 09:00:00,TED,Main Checking,HR Onboarding,PeopleFirst Ltd,2025-07-10,2025-07-10,Bimonthly,HR,onboarding,New Employee Setup (3 hires)
+
+T0041,1200.00,USD,2025-08-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-08-01,2025-08-31,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0042,8000.00,USD,2025-08-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-08-01,2025-08-31,Monthly,Operations,rent,Office Lease Downtown
+T0043,6000.00,USD,2025-08-02 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-08-01,2025-08-31,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0044,2000.00,USD,2025-08-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-08-01,2025-08-31,Monthly,HR,salaries,August Salaries
+T0045,340.00,USD,2025-08-06 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-08-01,2025-08-31,Monthly,Marketing,ads,Digital Campaigns
+
+T0046,1200.00,USD,2025-09-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-09-01,2025-09-30,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0047,8000.00,USD,2025-09-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-09-01,2025-09-30,Monthly,Operations,rent,Office Lease Downtown
+T0048,6600.00,USD,2025-09-02 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-09-01,2025-09-30,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0049,2000.00,USD,2025-09-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-09-01,2025-09-30,Monthly,HR,salaries,September Salaries
+T0050,400.00,USD,2025-09-07 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-09-01,2025-09-30,Monthly,Marketing,ads,Digital Campaigns
+T0051,4800.00,USD,2025-09-10 09:00:00,WIRE,Main Checking,Amazon,Amazon Marketplace,2025-09-10,2025-09-10,Quarterly,Engineering,equipment,2x Developer Laptops (Q3)
+T0052,9900.00,USD,2025-09-11 09:00:00,TED,Main Checking,HR Onboarding,PeopleFirst Ltd,2025-09-11,2025-09-11,Bimonthly,HR,onboarding,New Employee Setup (4 hires)
+
+T0053,1200.00,USD,2025-10-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-10-01,2025-10-31,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0054,8000.00,USD,2025-10-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-10-01,2025-10-31,Monthly,Operations,rent,Office Lease Downtown
+T0055,7200.00,USD,2025-10-02 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-10-01,2025-10-31,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0056,2000.00,USD,2025-10-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-10-01,2025-10-31,Monthly,HR,salaries,October Salaries
+T0057,380.00,USD,2025-10-06 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-10-01,2025-10-31,Monthly,Marketing,ads,Digital Campaigns
+
+T0058,1200.00,USD,2025-11-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-11-01,2025-11-30,Monthly,Engineering,subscriptions,Enterprise GPT-5 Plan
+T0059,8000.00,USD,2025-11-02 08:30:00,PIX,Main Checking,Landlord LLC,City Offices Ltd,2025-11-01,2025-11-30,Monthly,Operations,rent,Office Lease Downtown
+T0060,7800.00,USD,2025-11-02 11:00:00,WIRE,Cloud Account,AWS,Amazon Web Services,2025-11-01,2025-11-30,Monthly,Engineering,infrastructure,Cloud Compute & Storage
+T0061,2000.00,USD,2025-11-05 10:00:00,TED,Payroll Account,Employees,Payroll Ltd,2025-11-01,2025-11-30,Monthly,HR,salaries,November Salaries
+T0062,350.00,USD,2025-11-07 15:10:00,PIX,Marketing Account,Google Ads,Google LLC,2025-11-01,2025-11-30,Monthly,Marketing,ads,Digital Campaigns
+T0063,9600.00,USD,2025-11-11 09:00:00,TED,Main Checking,HR Onboarding,PeopleFirst Ltd,2025-11-11,2025-11-11,Bimonthly,HR,onboarding,New Employee Setup (3 hires)
+
+T0064,1200.00,USD,2025-12-02 09:00:00,TED,Main Checking,OpenAI,OpenAI Enterprise,2025-12-01,2025-12-31,Monthly,Engineering,subscriptions,
