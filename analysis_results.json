@@ -1,0 +1,194 @@
+{
+  "duplicate_spend_detection": {
+    "duplicate_detections": [
+      {
+        "vendors": [
+          "AWS",
+          "Google Cloud Platform"
+        ],
+        "category": "Cloud Infrastructure / Compute Services",
+        "current_spending": {
+          "vendor_a_monthly": 3800.0,
+          "vendor_b_monthly": 3533.33,
+          "total_monthly": 7333.33,
+          "total_yearly": 88000.0
+        },
+        "savings_estimate": {
+          "percentage": 20.0,
+          "monthly_amount": 1466.67,
+          "yearly_amount": 17600.0
+        },
+        "reasoning": "Both AWS and GCP are being used for the same type of workloads (pay‑as‑you‑go compute, storage and networking). The spend pattern is highly correlated month‑to‑month and the same engineering team purchases both services. Consolidating to a single cloud provider would allow the company to negotiate volume discounts, reduce duplicate tooling/ops overhead, and simplify governance.",
+        "recommendation": "Consolidate to the provider with the lower average cost (Google Cloud) after a detailed workload‑fit analysis, and negotiate a 20% volume discount for the combined spend."
+      },
+      {
+        "vendors": [
+          "OpenAI",
+          "Anthropic"
+        ],
+        "category": "Generative AI / LLM Inference Services",
+        "current_spending": {
+          "vendor_a_monthly": 1950.0,
+          "vendor_b_monthly": 1950.0,
+          "total_monthly": 3900.0,
+          "total_yearly": 46800.0
+        },
+        "savings_estimate": {
+          "percentage": 15.0,
+          "monthly_amount": 585.0,
+          "yearly_amount": 7020.0
+        },
+        "reasoning": "Both vendors provide comparable large‑language‑model APIs (GPT‑4‑style vs Claude). The engineering team is splitting usage across the two APIs with similar monthly spend, creating duplicated contract management and integration effort. A single‑vendor strategy would enable a higher‑volume pricing tier and reduce integration maintenance.",
+        "recommendation": "Select the vendor that best matches the primary model performance requirements (e.g., OpenAI if GPT‑4 quality is needed) and negotiate a 15% volume discount for the consolidated usage."
+      },
+      {
+        "vendors": [
+          "Figma",
+          "Canva"
+        ],
+        "category": "Design & Creative Collaboration Tools",
+        "current_spending": {
+          "vendor_a_monthly": 80.0,
+          "vendor_b_monthly": 100.0,
+          "total_monthly": 180.0,
+          "total_yearly": 2160.0
+        },
+        "savings_estimate": {
+          "percentage": 20.0,
+          "monthly_amount": 36.0,
+          "yearly_amount": 432.0
+        },
+        "reasoning": "Both tools are used by the Design team for similar purposes (creating UI mock‑ups, marketing assets, etc.). Maintaining two separate licenses creates redundant capability. Consolidating to the lower‑cost tool (Figma) or negotiating an enterprise bundle can capture a 20% cost reduction while preserving needed functionality.",
+        "recommendation": "Standardize on Figma (the cheaper option) and discontinue the Canva subscription, renegotiating the Figma contract for a 20% enterprise discount."
+      }
+    ],
+    "summary": "The analysis uncovered three primary areas of duplicate spend: cloud infrastructure (AWS vs. GCP), generative AI APIs (OpenAI vs. Anthropic), and design tools (Figma vs. Canva). Consolidating each pair could save roughly $17.6k, $7.0k, and $0.43k per year respectively, representing 20%, 15% and 20% reductions in those spend categories. Implementing these consolidations would streamline vendor management, reduce operational overhead, and improve negotiating leverage, delivering an estimated total annual savings of about $25,052 across the organization."
+  },
+  "yearly_switch_advisor": {
+    "recommendations": [
+      {
+        "vendor": "Slack",
+        "current_monthly_cost": 175.0,
+        "current_yearly_cost": 2100.0,
+        "projected_yearly_cost": 1680.0,
+        "yearly_savings": 420.0,
+        "payback_period_months": 9.6,
+        "recommendation": "Switch to yearly",
+        "reasoning": "Stable spend and $420 annual savings (> $100) make the annual plan financially attractive."
+      },
+      {
+        "vendor": "GitHub",
+        "current_monthly_cost": 40.0,
+        "current_yearly_cost": 480.0,
+        "projected_yearly_cost": 384.0,
+        "yearly_savings": 96.0,
+        "payback_period_months": 9.6,
+        "recommendation": "Don't switch",
+        "reasoning": "Savings are only $96/year, below the $100 threshold for recommendation."
+      },
+      {
+        "vendor": "Figma",
+        "current_monthly_cost": 80.0,
+        "current_yearly_cost": 960.0,
+        "projected_yearly_cost": 768.0,
+        "yearly_savings": 192.0,
+        "payback_period_months": 9.6,
+        "recommendation": "Switch to yearly",
+        "reasoning": "Stable spend and $192 annual savings justify moving to an annual contract."
+      },
+      {
+        "vendor": "Canva",
+        "current_monthly_cost": 100.0,
+        "current_yearly_cost": 1200.0,
+        "projected_yearly_cost": 960.0,
+        "yearly_savings": 240.0,
+        "payback_period_months": 9.6,
+        "recommendation": "Switch to yearly",
+        "reasoning": "Stable spend and $240 annual savings exceed the $100 threshold."
+      },
+      {
+        "vendor": "Notion",
+        "current_monthly_cost": 120.0,
+        "current_yearly_cost": 1440.0,
+        "projected_yearly_cost": 1152.0,
+        "yearly_savings": 288.0,
+        "payback_period_months": 9.6,
+        "recommendation": "Switch to yearly",
+        "reasoning": "Stable spend and $288 annual savings make the yearly plan clearly beneficial."
+      }
+    ],
+    "summary": "Switch to yearly billing for Slack, Figma, Canva, and Notion, each delivering savings well above $100 per year. Do not switch GitHub, as the projected annual savings ($96) fall short of the $100 threshold."
+  },
+  "smart_substitution_advisor": {
+    "recommendations": [
+      {
+        "current_vendor": "OpenAI",
+        "category": "AI subscription",
+        "recommended_action": "Keep Current",
+        "potential_savings": 0.0,
+        "reasoning": "Anthropic offers the same monthly spend ($1,950) with comparable LLM capabilities. Switching provides no cost advantage, and OpenAI already meets the company’s performance needs."
+      },
+      {
+        "current_vendor": "Anthropic",
+        "category": "AI subscription",
+        "recommended_action": "Keep Current",
+        "potential_savings": 0.0,
+        "reasoning": "OpenAI costs the same ($1,950) and provides similar functionality. No monetary benefit to switching."
+      },
+      {
+        "current_vendor": "Figma",
+        "category": "Design tool",
+        "recommended_action": "Keep Current",
+        "potential_savings": 0.0,
+        "reasoning": "Figma is $80/month, which is $20 cheaper than Canva. Switching to Canva would increase spend without adding unique capabilities."
+      },
+      {
+        "current_vendor": "Canva",
+        "category": "Design tool",
+        "recommended_action": "Switch to Figma",
+        "potential_savings": 20.0,
+        "reasoning": "Figma provides a full‑featured UI/UX design suite at $80/month versus Canva’s $100/month. The $20/month saving (≈20% reduction) also aligns better with product‑design workflows."
+      },
+      {
+        "current_vendor": "AWS",
+        "category": "Cloud infrastructure",
+        "recommended_action": "Switch to Google Cloud Platform",
+        "potential_savings": 266.67,
+        "reasoning": "GCP costs $3,533.33/month versus AWS’s $3,800/month, delivering a $266.67 monthly saving (≈7% lower). Both platforms offer comparable services; GCP’s pricing tier and sustained‑use discounts make it the more cost‑effective choice."
+      },
+      {
+        "current_vendor": "Google Cloud Platform",
+        "category": "Cloud infrastructure",
+        "recommended_action": "Keep Current",
+        "potential_savings": 0.0,
+        "reasoning": "Switching to AWS would raise monthly spend by $266.67 with no clear functional advantage. GCP already provides the needed services at the lower price."
+      },
+      {
+        "current_vendor": "Slack",
+        "category": "Team communication",
+        "recommended_action": "Keep Current",
+        "potential_savings": 0.0,
+        "reasoning": "Notion ($120) is a knowledge‑base / project‑management tool, not a real‑time chat platform. The functional overlap is limited, so cost alone does not justify replacing Slack."
+      },
+      {
+        "current_vendor": "GitHub",
+        "category": "Source code hosting",
+        "recommended_action": "Keep Current",
+        "potential_savings": 0.0,
+        "reasoning": "All other listed services serve different purposes (AI, design, communication, cloud). GitHub’s $40/month is already minimal for version‑control needs."
+      },
+      {
+        "current_vendor": "Notion",
+        "category": "Knowledge & project management",
+        "recommended_action": "Keep Current",
+        "potential_savings": 0.0,
+        "reasoning": "Notion’s $120/month is distinct from Slack’s $175/month (chat) and from design or AI tools. No direct cost‑saving substitution exists."
+      }
+    ],
+    "summary": "The only clear cost‑saving switches are moving from Canva to Figma (saving $20/month) and migrating cloud workloads from AWS to Google Cloud Platform (saving $266.67/month). All AI subscriptions (OpenAI vs Anthropic) are priced identically, so no monetary gain is achieved by swapping. Other services (Slack, GitHub, Notion) serve unique functions with no direct, cheaper alternatives in the provided list, so they should be retained."
+  },
+  "metadata": {
+    "total_transactions": 69,
+    "analysis_date": "2025-10-31T16:05:36.725919"
+  }
+}

@@ -1,0 +1,70 @@
+transaction_id,amount,currency,datetime,payment_method,src_account,dst_account,vendor_name,start_date,end_date,recurrency,department,expense_type,expense_name
+T0001,11333.00,USD,2025-01-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-01-01,2025-01-31,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:1]{index=1}
+T0002,28463.00,USD,2025-01-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-01-01,2025-01-31,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0003,175.00,USD,2025-01-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-01-01,2025-01-31,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0004,40.00,USD,2025-01-03 10:00:00,PIX,Main Checking,GitHub,GitHub,2025-01-01,2025-01-31,Monthly,Engineering,subscriptions,GitHub Team 10 users @ $4/u/mo 
+T0005,3200.00,USD,2025-01-15 14:10:00,WIRE,Cloud Account,AWS,AWS,2025-01-01,2025-01-31,Monthly,Engineering,infrastructure,AWS usage Jan (pay-as-you-go) :contentReference[oaicite:5]{index=5}
+T0006,3000.00,USD,2025-01-15 14:20:00,WIRE,Cloud Account,Google Cloud,Google Cloud Platform,2025-01-01,2025-01-31,Monthly,Engineering,infrastructure,GCP usage Jan (Compute Engine ref) :contentReference[oaicite:6]{index=6}
+T0007,1750.00,USD,2025-01-15 16:00:00,TED,Main Checking,OpenAI,OpenAI,2025-01-01,2025-01-31,Monthly,Engineering,subscriptions,OpenAI API GPT usage Jan (token pricing) :contentReference[oaicite:7]{index=7}
+T0008,1800.00,USD,2025-01-15 16:10:00,TED,Main Checking,Anthropic,Anthropic,2025-01-01,2025-01-31,Monthly,Engineering,subscriptions,Claude API usage Jan Sonnet pricing :contentReference[oaicite:8]{index=8}
+T0009,400.00,USD,2025-01-20 11:00:00,PIX,Marketing Account,Google Ads,Google Ads,2025-01-01,2025-01-31,Monthly,Marketing,ads,Google Ads monthly spend Jan per budget rules :contentReference[oaicite:9]{index=9}
+T0010,11333.00,USD,2025-02-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-02-01,2025-02-28,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:10]{index=10}
+T0011,28463.00,USD,2025-02-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-02-01,2025-02-28,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0012,175.00,USD,2025-02-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-02-01,2025-02-28,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0013,40.00,USD,2025-02-03 10:00:00,PIX,Main Checking,GitHub,GitHub,2025-02-01,2025-02-28,Monthly,Engineering,subscriptions,GitHub Team 10 users @ $4/u/mo 
+T0014,11333.00,USD,2025-03-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-03-01,2025-03-31,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:14]{index=14}
+T0015,28463.00,USD,2025-03-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-03-01,2025-03-31,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0016,175.00,USD,2025-03-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-03-01,2025-03-31,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0017,40.00,USD,2025-03-03 10:00:00,PIX,Main Checking,GitHub,GitHub,2025-03-01,2025-03-31,Monthly,Engineering,subscriptions,GitHub Team 10 users @ $4/u/mo 
+T0018,80.00,USD,2025-03-03 10:05:00,PIX,Main Checking,Figma,Figma,2025-03-01,2025-03-31,Monthly,Design,subscriptions,Figma Professional 5 full seats @ $16 :contentReference[oaicite:18]{index=18}
+T0019,100.00,USD,2025-03-03 10:10:00,PIX,Main Checking,Canva,Canva,2025-03-01,2025-03-31,Monthly,Design,subscriptions,Canva Business 5 seats @ $20 :contentReference[oaicite:19]{index=19}
+T0020,11333.00,USD,2025-04-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-04-01,2025-04-30,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:20]{index=20}
+T0021,28463.00,USD,2025-04-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-04-01,2025-04-30,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0022,175.00,USD,2025-04-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-04-01,2025-04-30,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0023,40.00,USD,2025-04-03 10:00:00,PIX,Main Checking,GitHub,GitHub,2025-04-01,2025-04-30,Monthly,Engineering,subscriptions,GitHub Team 10 users @ $4/u/mo 
+T0024,80.00,USD,2025-04-03 10:05:00,PIX,Main Checking,Figma,Figma,2025-04-01,2025-04-30,Monthly,Design,subscriptions,Figma Professional 5 full seats @ $16 :contentReference[oaicite:24]{index=24}
+T0025,100.00,USD,2025-04-03 10:10:00,PIX,Main Checking,Canva,Canva,2025-04-01,2025-04-30,Monthly,Design,subscriptions,Canva Business 5 seats @ $20 :contentReference[oaicite:25]{index=25}
+T0026,11333.00,USD,2025-05-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-05-01,2025-05-31,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:26]{index=26}
+T0027,28463.00,USD,2025-05-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-05-01,2025-05-31,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0028,175.00,USD,2025-05-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-05-01,2025-05-31,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0029,40.00,USD,2025-05-03 10:00:00,PIX,Main Checking,GitHub,GitHub,2025-05-01,2025-05-31,Monthly,Engineering,subscriptions,GitHub Team 10 users @ $4/u/mo 
+T0030,80.00,USD,2025-05-03 10:05:00,PIX,Main Checking,Figma,Figma,2025-05-01,2025-05-31,Monthly,Design,subscriptions,Figma Professional 5 full seats @ $16 :contentReference[oaicite:30]{index=30}
+T0031,100.00,USD,2025-05-03 10:10:00,PIX,Main Checking,Canva,Canva,2025-05-01,2025-05-31,Monthly,Design,subscriptions,Canva Business 5 seats @ $20 :contentReference[oaicite:31]{index=31}
+T0032,11333.00,USD,2025-06-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-06-01,2025-06-30,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:32]{index=32}
+T0033,28463.00,USD,2025-06-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-06-01,2025-06-30,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0034,175.00,USD,2025-06-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-06-01,2025-06-30,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0035,40.00,USD,2025-06-03 10:00:00,PIX,Main Checking,GitHub,GitHub,2025-06-01,2025-06-30,Monthly,Engineering,subscriptions,GitHub Team 10 users @ $4/u/mo 
+T0036,4500.00,USD,2025-06-15 14:10:00,WIRE,Cloud Account,AWS,AWS,2025-06-01,2025-06-30,Monthly,Engineering,infrastructure,AWS usage Jun (pay-as-you-go) :contentReference[oaicite:36]{index=36}
+T0037,4200.00,USD,2025-06-15 14:20:00,WIRE,Cloud Account,Google Cloud,Google Cloud Platform,2025-06-01,2025-06-30,Monthly,Engineering,infrastructure,GCP usage Jun (Compute Engine ref) :contentReference[oaicite:37]{index=37}
+T0038,2200.00,USD,2025-06-15 16:00:00,TED,Main Checking,OpenAI,OpenAI,2025-06-01,2025-06-30,Monthly,Engineering,subscriptions,OpenAI API GPT usage Jun (token pricing) :contentReference[oaicite:38]{index=38}
+T0039,2100.00,USD,2025-06-15 16:10:00,TED,Main Checking,Anthropic,Anthropic,2025-06-01,2025-06-30,Monthly,Engineering,subscriptions,Claude API usage Jun Sonnet pricing :contentReference[oaicite:39]{index=39}
+T0040,600.00,USD,2025-06-20 11:00:00,PIX,Marketing Account,Google Ads,Google Ads,2025-06-01,2025-06-30,Monthly,Marketing,ads,Google Ads monthly spend Jun per budget rules :contentReference[oaicite:40]{index=40}
+T0041,11333.00,USD,2025-07-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-07-01,2025-07-31,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:41]{index=41}
+T0042,28463.00,USD,2025-07-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-07-01,2025-07-31,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0043,175.00,USD,2025-07-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-07-01,2025-07-31,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0044,120.00,USD,2025-07-03 10:00:00,PIX,Main Checking,Notion,Notion,2025-07-01,2025-07-31,Monthly,Operations,subscriptions,Notion Plus 10 seats @ $12/u/mo :contentReference[oaicite:44]{index=44}
+T0045,11333.00,USD,2025-08-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-08-01,2025-08-31,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:45]{index=45}
+T0046,28463.00,USD,2025-08-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-08-01,2025-08-31,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0047,175.00,USD,2025-08-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-08-01,2025-08-31,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0048,120.00,USD,2025-08-03 10:00:00,PIX,Main Checking,Notion,Notion,2025-08-01,2025-08-31,Monthly,Operations,subscriptions,Notion Plus 10 seats @ $12/u/mo :contentReference[oaicite:48]{index=48}
+T0049,11333.00,USD,2025-09-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-09-01,2025-09-30,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:49]{index=49}
+T0050,28463.00,USD,2025-09-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-09-01,2025-09-30,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0051,175.00,USD,2025-09-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-09-01,2025-09-30,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0052,120.00,USD,2025-09-03 10:00:00,PIX,Main Checking,Notion,Notion,2025-09-01,2025-09-30,Monthly,Operations,subscriptions,Notion Plus 10 seats @ $12/u/mo :contentReference[oaicite:52]{index=52}
+T0053,11333.00,USD,2025-10-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-10-01,2025-10-31,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:53]{index=53}
+T0054,28463.00,USD,2025-10-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-10-01,2025-10-31,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0055,175.00,USD,2025-10-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-10-01,2025-10-31,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0056,120.00,USD,2025-10-03 10:00:00,PIX,Main Checking,Notion,Notion,2025-10-01,2025-10-31,Monthly,Operations,subscriptions,Notion Plus 10 seats @ $12/u/mo :contentReference[oaicite:56]{index=56}
+T0057,11333.00,USD,2025-11-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-11-01,2025-11-30,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:57]{index=57}
+T0058,28463.00,USD,2025-11-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-11-01,2025-11-30,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0059,175.00,USD,2025-11-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-11-01,2025-11-30,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0060,120.00,USD,2025-11-03 10:00:00,PIX,Main Checking,Notion,Notion,2025-11-01,2025-11-30,Monthly,Operations,subscriptions,Notion Plus 10 seats @ $12/u/mo :contentReference[oaicite:60]{index=60}
+T0061,3700.00,USD,2025-11-15 14:10:00,WIRE,Cloud Account,AWS,AWS,2025-11-01,2025-11-30,Monthly,Engineering,infrastructure,AWS usage Nov (pay-as-you-go) :contentReference[oaicite:61]{index=61}
+T0062,3400.00,USD,2025-11-15 14:20:00,WIRE,Cloud Account,Google Cloud,Google Cloud Platform,2025-11-01,2025-11-30,Monthly,Engineering,infrastructure,GCP usage Nov (Compute Engine ref) :contentReference[oaicite:62]{index=62}
+T0063,1900.00,USD,2025-11-15 16:00:00,TED,Main Checking,OpenAI,OpenAI,2025-11-01,2025-11-30,Monthly,Engineering,subscriptions,OpenAI API GPT usage Nov (token pricing) :contentReference[oaicite:63]{index=63}
+T0064,1950.00,USD,2025-11-15 16:10:00,TED,Main Checking,Anthropic,Anthropic,2025-11-01,2025-11-30,Monthly,Engineering,subscriptions,Claude API usage Nov Sonnet pricing :contentReference[oaicite:64]{index=64}
+T0065,900.00,USD,2025-11-20 11:00:00,PIX,Marketing Account,Google Ads,Google Ads,2025-11-01,2025-11-30,Monthly,Marketing,ads,Google Ads monthly spend Nov per budget rules :contentReference[oaicite:65]{index=65}
+T0066,11333.00,USD,2025-12-01 09:05:00,WIRE,Main Checking,Landlord SF,Landlord SF,2025-12-01,2025-12-31,Monthly,Operations,rent,Office lease SF 2000 sqft :contentReference[oaicite:66]{index=66}
+T0067,28463.00,USD,2025-12-05 12:00:00,WIRE,Payroll Account,Employees,Company Payroll,2025-12-01,2025-12-31,Monthly,HR,salaries,Monthly payroll batch, SF SWE ref 
+T0068,175.00,USD,2025-12-02 10:00:00,PIX,Main Checking,Slack,Slack,2025-12-01,2025-12-31,Monthly,Engineering,subscriptions,Slack Pro 20 users @ $8.75/u/mo 
+T0069,120.00,USD,2025-12-03 10:00:00,PIX,Main Checking,Notion,Notion,2025-12-01,2025-12-31,Monthly,Operations,subscriptions,Notion Plus 10 seats @ $12/u/mo :contentReference[oaicite:69]{index=69}
