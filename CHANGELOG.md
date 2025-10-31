@@ -62,3 +62,37 @@ All notable changes to this project will be documented in this file.
 - All 20 tests now pass successfully
 - Added email-validator dependency for Pydantic EmailStr validation
 
+### /feat - Frontend-backend integration with login system
+- Integrated React frontend with FastAPI backend authentication system
+- Created AuthContext to manage authentication state across the application
+- Implemented Login component with form validation and error handling
+- Implemented Register component with user registration functionality
+- Updated App.jsx to handle authentication flow and protect routes
+- Updated LandingPage to integrate with backend API for CSV upload
+- Updated LandingPage to support loading default CSV from backend
+- Added logout functionality to both LandingPage and Dashboard components
+- All API requests now include JWT authentication tokens
+- Frontend now properly handles authentication state and redirects unauthenticated users
+
+### /feat - Request logging middleware with POST data
+- Added RequestLoggingMiddleware to log all incoming HTTP requests
+- Logs request method, path, client IP, query parameters, and POST body data
+- Supports logging JSON, form-urlencoded, and multipart form data
+- Masks sensitive data: passwords in request bodies and JWT tokens in headers
+- Logs request processing time and response status codes
+- Logs errors with full context for debugging
+- Configured logging to output to stdout with timestamps and log levels
+- Logs detailed body data at INFO level, full request details at DEBUG level
+
+### /feat - Background CSV processing and user data check on login
+- Updated CSV upload endpoint to use FastAPI BackgroundTasks for asynchronous processing
+- CSV processing now runs in background to avoid blocking frontend requests
+- Created process_csv_data helper function that creates its own database session for background processing
+- Updated read_default_csv endpoint to also use background processing
+- Login endpoint now checks if user has existing expenses and returns has_data flag in response
+- Frontend automatically checks for user data on login and redirects accordingly
+- Users with existing data are automatically redirected to dashboard with their data loaded
+- Users without data are redirected to CSV upload page
+- Frontend automatically loads user expense data when authenticated user has expenses
+- Updated AuthContext to track hasData state and provide refreshDataStatus function
+

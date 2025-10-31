@@ -28,6 +28,7 @@ class UserResponse(UserBase):
 class Token(BaseModel):
     access_token: str
     token_type: str
+    has_data: bool = False  # Indicates if user has existing expense data
 
 
 class TokenData(BaseModel):
