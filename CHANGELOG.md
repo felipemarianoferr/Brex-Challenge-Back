@@ -1,0 +1,44 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+### /feat - Initial FastAPI backend service
+- Created FastAPI application with PostgreSQL database integration
+- Added SQLAlchemy models for expense data
+- Implemented CSV upload route to read and store expenses from CSV files
+- Added route to read default mock.csv file and store in database
+- Created database schema with all expense fields (transaction_id, amount, currency, datetime, payment_method, etc.)
+- Added endpoints for listing and retrieving expenses
+- Configured PostgreSQL connection with password "admin"
+
+### /chore - Environment variables configuration
+- Updated database configuration to use .env file with load_dotenv()
+- Added support for individual database environment variables (DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME)
+- Created .env file with default database configuration
+- Added python-dotenv dependency to requirements.txt
+
+### /feat - Hello world route and unit tests
+- Added GET /hello endpoint that returns "Hello, World!" message
+- Created comprehensive unit tests using pytest with mock.csv as test data
+- Added test suite covering all API endpoints (hello, CSV upload, expense retrieval, pagination)
+- Tests use in-memory SQLite database for fast test execution
+- Added pytest and httpx dependencies for testing
+
+### /fix - Test database connection issues
+- Fixed database connection errors in tests by overriding PostgreSQL engine with SQLite in-memory engine
+- Tests now properly isolate database connections and don't require PostgreSQL during test execution
+- Fixed test data type assertions to handle Decimal serialization properly
+
+### /chore - Database authentication defaults
+- Added default values for database connection (user: postgres, password: admin)
+- Database configuration now defaults to postgres/admin if .env file is missing or incomplete
+- Ensures consistent authentication credentials across environments
+
+### /feat - Database query endpoint
+- Added GET /api/expenses/query/database endpoint to query and filter expenses from database
+- Supports filtering by department, expense_type, vendor_name, currency, amount range, and date range
+- Includes pagination support with skip and limit parameters
+- Returns expenses ordered by datetime (most recent first)
+
